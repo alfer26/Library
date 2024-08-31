@@ -1,0 +1,684 @@
+@import url(https://necolas.github.io/normalize.css/8.0.1/normalize.css);
+
+body {
+    background: url(./images/library-background.png);
+    background-attachment: fixed;
+    background-repeat: repeat-y;
+    background-position-y: 142px;
+    background-size: 121.23%;
+    background-color: rgb(98, 36, 51);
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.356);
+    font-family: cursive;
+    display: flex;
+    flex-direction: column;
+    cursor: context-menu;
+    word-break: break-word;
+    overflow-y: scroll;
+}
+
+button {
+    cursor: pointer;
+}
+
+header {
+    background-color: rgb(82, 30, 43);
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    color: rgb(255, 243, 218);
+    margin: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.685);
+}
+
+section#actionsLibrary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: 75px;
+    background-color: rgb(98, 36, 51);
+}
+
+section#actionsLibrary::after,
+section#actionsLibrary::before,
+article.book div.actionsBook::after,
+article.book div.actionsBook::before,
+article.bookAdd div.actionsBook::after,
+article.bookAdd div.actionsBook::before {
+    content: "";
+}
+
+#actionsLibrary > button {
+    background: linear-gradient(
+        rgb(212, 209, 201),
+        rgb(255, 249, 235),
+        rgb(214, 209, 198)
+    );
+    border: 5px solid hwb(345 14% 62%);
+    border-top: 7px solid #b42a76;
+    border-bottom: 7px solid #9f2b69;
+    width: 50%;
+    min-height: 55px;
+    text-shadow: 0px 2px 2px #00000075;
+    font-size: 22px;
+    color: #521717;
+    position: relative;
+    z-index: 1;
+}
+
+div#sorting {
+    display: none;
+    position: absolute;
+    left: calc(25% + 8px);
+    top: 133px;
+    width: calc((75% - 28px));
+    flex-direction: column;
+}
+
+div#sorting:hover {
+    display: flex;
+}
+
+div#sorting div {
+    display: flex;
+    flex-direction: row;
+}
+
+div#sorting > div > button,
+div#sorting > button {
+    border: 0;
+    border-left: 5px solid hwb(345 14% 62%);
+    border-right: 5px solid hwb(345 14% 62%);
+    border-bottom: 7px solid #9f2b69;
+    text-shadow: 0px 2px 2px #00000075;
+    font-size: 22px;
+    color: #521717;
+    width: 33.1%;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(
+        rgb(212, 209, 201),
+        rgb(255, 249, 235),
+        rgb(214, 209, 198)
+    );
+}
+
+div#sorting > button {
+    background: linear-gradient(
+        rgb(221, 181, 73),
+        rgb(226, 198, 38),
+        rgb(221, 181, 73)
+    );
+    color: #da0000;
+    display: none;
+}
+
+div#sorting > button:hover {
+    background: linear-gradient(
+        rgb(255, 187, 0),
+        rgb(255, 217, 0),
+        rgb(255, 187, 0)
+    );
+    color: #ff0000;
+    font-weight: bold;
+}
+
+div#sorting > button:active {
+    background: linear-gradient(
+        rgb(255, 0, 0),
+        rgb(255, 51, 0),
+        rgb(255, 0, 0)
+    );
+    color: rgb(255, 217, 0);
+    font-weight: bold;
+}
+
+div#sorting > div button:hover {
+    background: linear-gradient(
+        hsl(44, 11%, 85%),
+        hsl(42, 100%, 100%),
+        hsl(41, 16%, 85%)
+    );
+}
+#actionsLibrary div div div button:hover {
+    background: white;
+    font-weight: bolder;
+}
+
+#actionsLibrary div div div button:active {
+    background: black;
+    font-weight: bolder;
+    color: rgb(255, 249, 235);
+}
+
+#actionsLibrary > button:nth-of-type(2):hover + div#sorting {
+    top: 135px;
+    display: flex;
+}
+
+div#sorting div > div div {
+    position: absolute;
+    display: none;
+    background-color: hwb(345 14% 62%);
+    padding-left: 10px;
+    padding-right: 10px;
+    column-gap: 10px;
+}
+
+div#sorting div > div div:hover,
+div#sorting div:first-of-type:hover div div,
+div#sorting > div > button:hover ~ div div {
+    display: flex;
+    width: 66.9%;
+}
+
+div#sorting div > div div button {
+    border: 0;
+    border-left: 5px solid hwb(345 14% 62%);
+    border-right: 5px solid hwb(345 14% 62%);
+    border-bottom: 7px solid #9f2b69;
+    text-shadow: 0px 2px 2px #00000075;
+    font-size: 22px;
+    color: #521717;
+    width: 50%;
+    min-height: 48px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(
+        rgb(212, 209, 201),
+        rgb(255, 249, 235),
+        rgb(214, 209, 198)
+    );
+    padding: 8px;
+}
+
+div#sorting div:last-of-type div div {
+    display: none;
+}
+
+div#sorting div:last-of-type:hover div div {
+    display: grid;
+    width: 66.9%;
+    grid-template-columns: 1fr 1fr;
+    top: 41px;
+    max-height: calc(100vh - 174px);
+    overflow-y: auto;
+}
+
+div#sorting div:last-of-type > div div button:nth-of-type(1),
+div#sorting div:last-of-type > div div button:nth-of-type(2) {
+    border-top: 7px solid #9f2b69;
+    min-height: 55px;
+    width: 100%;
+    padding: 8px;
+}
+
+div#sorting div:last-of-type > div div button {
+    width: 100%;
+}
+
+#actionsLibrary > button::after {
+    content: url(./images/bookmark-close.png);
+    position: absolute;
+    left: 8%;
+    top: 0px;
+    filter: hue-rotate(340deg);
+}
+
+#actionsLibrary > button:hover::after,
+#actionsLibrary > button:active::after {
+    content: url(./images/bookmark-open.png);
+    position: absolute;
+    left: 8%;
+    top: 0px;
+}
+
+#actionsLibrary > button:hover {
+    background: linear-gradient(
+        hsl(44, 11%, 85%),
+        hsl(42, 100%, 100%),
+        hsl(41, 16%, 85%)
+    );
+    border-top: 7px solid hsl(327, 62%, 48%);
+    border-bottom: 7px solid hsl(328, 57%, 44%);
+    height: 60px;
+}
+
+#actionsLibrary > button:active:not(:nth-of-type(2)) {
+    background: linear-gradient(
+        rgb(32, 28, 20),
+        rgb(39, 35, 25),
+        rgb(32, 28, 20)
+    );
+    border: 5px solid hwb(345 14% 62%);
+    border-top: 6px solid #b42a76;
+    border-bottom: 7px solid #9f2b68;
+    width: 50%;
+    height: 60px;
+    text-shadow: 0px 2px 2px;
+    font-size: 22px;
+    color: rgb(255, 249, 235);
+}
+
+article.book {
+    background-color: rgba(255, 233, 221, 0.158);
+    border: 6px solid hsl(345, 46%, 23%);
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: row;
+    color: hsl(0, 56%, 21%);
+    min-height: 260px;
+    align-items: center;
+}
+
+article.book div.info {
+    flex-grow: 1;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    margin: 25px;
+    margin-left: 30px;
+    row-gap: 10px;
+}
+
+article.book div.info *,
+article.bookAdd div.infoAdd *,
+body div#confirmDeleteAll,
+body div#confirmDeleteAll button {
+    margin: 0;
+    font-size: 27px;
+    text-shadow: 0px -1px 1px rgb(255, 249, 235), 0px 1px 1px rgb(255, 249, 235),
+        0px -1px 1px rgb(255, 249, 235), 0px 1px 1px rgb(255, 249, 235),
+        0px -1px 1px rgb(255, 249, 235), 0px 1px 1px rgb(255, 249, 235),
+        0px -1px 1px rgb(255, 249, 235), 0px 1px 1px rgb(255, 249, 235),
+        0px -1px 1px rgb(255, 249, 235), 0px 1px 1px rgb(255, 249, 235),
+        0px 5px 2px #00000080;
+    font-weight: bold;
+}
+
+article.book div.info p span {
+    color: hsl(27, 99%, 46%);
+}
+
+article.book div.info h2 {
+    font-size: 38px;
+    color: #c90540;
+}
+
+article.book div.actionsBook,
+article.bookAdd div.actionsBook {
+    display: flex;
+    margin-right: 4px;
+    flex-direction: column;
+    width: 130px;
+    height: 260px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.actionsBook button {
+    height: 48%;
+    background-color: rgba(255, 250, 240, 0.5);
+    color: white;
+    border-radius: 15px;
+    box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
+    border: 4px solid rgb(98, 36, 51);
+    user-select: none;
+    padding: 0;
+}
+
+span#helpDelete {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    width: 190px;
+    height: 45px;
+    border-radius: 10px;
+    background-color: #ffffffa2;
+    padding-bottom: 3px;
+    text-align: center;
+    flex-direction: column;
+    border: 1px solid black;
+    opacity: 0;
+    animation: help 1.5s forwards;
+}
+
+@keyframes help {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+div.actionsBook button img {
+    position: relative;
+    top: 2px;
+}
+
+section#library article:nth-of-type(2n) div.actionsBook button {
+    border-color: hsl(345, 46%, 23%);
+}
+
+div.actionsBook button.deleteBook:hover img {
+    filter: contrast(5);
+}
+
+div.actionsBook button.editBook:hover img {
+    filter: hue-rotate(50deg) brightness(2.9);
+}
+
+div.actionsBook button.editBook:hover {
+    border-color: hsl(27, 99%, 46%) !important;
+    background-color: rgba(255, 250, 240, 0.7);
+}
+
+div.actionsBook button.deleteBook:hover {
+    border-color: hsl(0, 100%, 50%) !important;
+    background-color: rgba(255, 250, 240, 0.7);
+}
+
+.actionsBook button:active {
+    box-shadow: inset 0px 0px 10px 4px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+div.actionsBook button.editBook:active img,
+div.actionsBook button.deleteBook:active img,
+div.actionsBook button.confirmBook:active img,
+div.actionsBook button.cancelBook:active img {
+    width: 91%;
+}
+
+section#library article:nth-of-type(2n) {
+    border-color: rgb(98, 36, 51);
+}
+
+main {
+    min-height: calc(100vh - 183px);
+}
+
+article.bookAdd {
+    background-color: rgba(255, 233, 221, 0.158);
+    border: 6px solid hsl(345, 46%, 23%);
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: row;
+    color: hsl(0, 56%, 21%);
+    height: 260px;
+    word-break: normal;
+}
+
+article.bookAdd div.infoAdd {
+    margin-top: 2px;
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    margin-left: 18px;
+    row-gap: 4px;
+}
+
+div.infoAdd label > input,
+div.infoAdd > input {
+    height: 37px;
+    background-color: #ffd6bf65;
+    border: 2px solid #d10f49;
+    border-radius: 20px;
+    box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    padding-bottom: 5px;
+    padding-left: 10px;
+}
+
+div.infoAdd > input {
+    color: hsl(0, 56%, 21%);
+    width: 99%;
+}
+
+div.infoAdd label > input {
+    color: hsl(27, 99%, 46%);
+    position: relative;
+    flex-grow: 1;
+}
+
+div.infoAdd label {
+    display: flex;
+    width: 99%;
+}
+
+div.infoAdd label span {
+    padding-left: 12px;
+    padding-top: 2px;
+}
+
+div.infoAdd label > input::-webkit-outer-spin-button,
+div.infoAdd label > input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+label.statusChoice input[type="radio"] {
+    display: none;
+}
+
+div#statusSelect {
+    display: flex;
+    gap: 0.3%;
+    width: 99.3%;
+    max-width: 99.7%;
+}
+
+label.statusChoice {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    height: 37px;
+    background-color: #ffd6bf65;
+    border: 2px solid #d10f49;
+    flex-grow: 1;
+    border-radius: 20px;
+    box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    left: -0.3%;
+    color: hsla(0, 56%, 21%, 0.75);
+}
+
+label.statusChoice:first-of-type {
+    width: 101.8%;
+}
+
+div#statusSelect > span {
+    margin-top: 2px;
+    margin-left: 12px;
+}
+
+label.statusChoice:has(input[type="radio"]:checked) {
+    color: hsl(27, 99%, 46%);
+    border: 2px solid hsl(27, 99%, 46%);
+    box-shadow: inset 0px 0px 10px 4px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+label.statusChoice:hover {
+    color: #d10f49;
+}
+
+div.infoAdd input::placeholder {
+    color: hsla(0, 56%, 21%, 0.75);
+}
+
+div.infoAdd > input:first-of-type {
+    height: 47px;
+    font-size: 38px;
+    border-radius: 30px;
+    color: #c90540;
+}
+
+article.bookAdd div.actionsBook button.confirmBook {
+    border-color: #1ae709 !important;
+}
+
+article.bookAdd div.actionsBook button.confirmBook:hover,
+article.bookAdd div.actionsBook button.cancelBook:hover {
+    background-color: rgba(255, 250, 240, 0.7);
+}
+
+article.bookAdd div.actionsBook button.cancelBook {
+    border-color: hsl(0, 100%, 50%) !important;
+}
+
+div#confirmDeleteAll {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    backdrop-filter: blur(5px);
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+}
+
+div#confirmDeleteAll > div {
+    display: flex;
+    background-color: rgba(255, 249, 235, 0.8);
+    border-radius: 30px;
+    border: 8px solid rgb(98, 36, 51);
+    width: 50%;
+    height: 65%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    bottom: 4%;
+}
+
+div#confirmDeleteAll > div > div,
+div#confirmDeleteAll > div > p {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 92%;
+    text-align: center;
+    font-size: 5vw;
+    color: hsl(0, 99%, 46%);
+}
+
+div#confirmDeleteAll > div > p {
+    position: relative;
+    flex-grow: 1;
+    top: -2%;
+}
+
+div#confirmDeleteAll > div > div {
+    position: relative;
+    bottom: 8%;
+    height: 150px;
+}
+
+div#confirmDeleteAll > div > div button {
+    width: 40%;
+    border-radius: 15px;
+    font-size: 4vw;
+    border: 4px solid hsl(0, 56%, 21%);
+    box-shadow: inset 0px 0px 7px 0px rgba(0, 0, 0, 0.5);
+    color: hsl(0, 56%, 21%);
+    padding-bottom: 11px;
+}
+
+button#confirmDeleteAllNo {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+button#confirmDeleteAllYes {
+    background-color: rgba(0, 128, 0, 0.5);
+}
+
+button#confirmDeleteAllNo:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+button#confirmDeleteAllYes:hover {
+    background-color: rgb(0, 128, 0);
+}
+
+button#confirmDeleteAllNo:active {
+    border: 4px solid rgb(255, 0, 0);
+    background-color: hsl(0, 56%, 21%);
+    color: rgb(255, 0, 0);
+    box-shadow: inset 0px 0px 7px 0px rgba(255, 255, 255, 0.5);
+    text-shadow: 0px -1px 1px black, 0px 1px 1px black, 0px -1px 1px black,
+        0px 1px 1px black, 0px -1px 1px black, 0px 1px 1px black,
+        0px -1px 1px black, 0px 1px 1px black, 0px -1px 1px black,
+        0px 1px 1px black, 0px 5px 2px hsla(0, 0%, 100%, 0.502);
+}
+
+button#confirmDeleteAllYes:active {
+    border: 4px solid rgb(0, 128, 0);
+    background-color: hsl(0, 56%, 21%);
+    color: rgb(0, 128, 0);
+    box-shadow: inset 0px 0px 7px 0px rgba(255, 255, 255, 0.5);
+    text-shadow: 0px -1px 1px black, 0px 1px 1px black, 0px -1px 1px black,
+        0px 1px 1px black, 0px -1px 1px black, 0px 1px 1px black,
+        0px -1px 1px black, 0px 1px 1px black, 0px -1px 1px black,
+        0px 1px 1px black, 0px 5px 2px hsla(0, 0%, 100%, 0.502);
+}
+
+footer {
+    display: flex;
+    background-color: hsl(347, 46%, 23%);
+    height: 40px;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    bottom: 0;
+}
+
+footer p {
+    font-size: 25px;
+    padding-bottom: 2px;
+    color: rgb(255, 243, 218);
+    text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.685);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: rgb(82, 30, 43);
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(255, 243, 218);
+    border-radius: 10px;
+    border: 3px solid #9f2b69;
+    display: block;
+    opacity: 1;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(255, 243, 218);
+    border: 3px solid #c90540;
+}

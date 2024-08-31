@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Библиотека книг</title>
+    </head>
+    <body style="opacity: 0">
+        <header>
+            <h1>Библиотека книг</h1>
+            <section id="actionsLibrary">
+                <button id="addBook">Добавить книгу</button>
+                <button id="sort">Сортировка</button>
+                <div id="sorting">
+                    <div id="by_status">
+                        <button id="by_status_button">По статусу</button>
+                        <div>
+                            <div>
+                                <button class="sort" id="readIt">
+                                    Прочитано
+                                </button>
+                                <button class="sort" id="noReadIt">
+                                    Не прочитано
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="by_genre">
+                        <button id="by_genre_button">По жанру</button>
+                        <div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <button id="reset">Сбросить</button>
+                </div>
+                <button id="refresh">Обновить страницу</button>
+                <button id="deleteAll">Удалить библиотеку</button>
+            </section>
+        </header>
+        <main>
+            <section id="library"></section>
+        </main>
+        <footer id="quantityBooks"></footer>
+        <script src="./script.js"></script>
+    </body>
+</html>
