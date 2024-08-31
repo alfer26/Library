@@ -6,7 +6,6 @@
 		url(./Comic\ Sans\ MS.ttf);
 }
 
-
 body {
     background: url(./images/library-background.png);
     background-attachment: fixed;
@@ -319,6 +318,7 @@ body div#confirmDeleteAll button {
 
 article.book div.info p span {
     color: hsl(27, 99%, 46%);
+    padding-left: 4px;
 }
 
 article.book div.info h2 {
